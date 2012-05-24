@@ -1,0 +1,14 @@
+version: 1.1.0
+apiversion: 2
+description: Mobeelizer SDK
+author: Mobeelizer Ltd
+license: GNU Affero General Public License
+copyright: Copyright (c) 2012 Mobeelizer Ltd
+
+# these should not be edited
+
+name: mobeelizersdk
+moduleid: ti.mobeelizer.sdk
+guid: a4387b9f-faf2-4651-aa50-264089c9c05e
+platform: iphone
+minsdk: 2.0.1.GA2

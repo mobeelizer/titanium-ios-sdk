@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24416B8111C4CA220047AFDD /* Build & Test */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */;
+			buildPhases = (
+				24416B8011C4CA220047AFDD /* ShellScript */,
+			);
+			dependencies = (
+				24416B8511C4CA280047AFDD /* PBXTargetDependency */,
+			);
+			name = "Build & Test";
+			productName = "Build & test";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		24DD6CF91134B3F500162E58 /* TiMobeelizerSdkModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* TiMobeelizerSdkModule.h */; };
+		24DD6CFA1134B3F500162E58 /* TiMobeelizerSdkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* TiMobeelizerSdkModule.m */; };
+		24DE9E1111C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.h */; };
+		24DE9E1211C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.mm in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.mm */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		C8459D52156E666700EAF9F4 /* TiMobeelizerSdkCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D3B156E666700EAF9F4 /* TiMobeelizerSdkCallback.h */; };
+		C8459D53156E666700EAF9F4 /* TiMobeelizerSdkCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D3C156E666700EAF9F4 /* TiMobeelizerSdkCallback.m */; };
+		C8459D54156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D3D156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.h */; };
+		C8459D55156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D3E156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.m */; };
+		C8459D56156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D3F156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionProxy.h */; };
+		C8459D57156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D40156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionProxy.m */; };
+		C8459D58156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D41156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.h */; };
+		C8459D59156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D42156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.m */; };
+		C8459D5A156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D43156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderProxy.h */; };
+		C8459D5B156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D44156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderProxy.m */; };
+		C8459D5C156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D45156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderProxy.h */; };
+		C8459D5D156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D46156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderProxy.m */; };
+		C8459D5E156E666700EAF9F4 /* TiMobeelizerSdkDatabaseProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D47156E666700EAF9F4 /* TiMobeelizerSdkDatabaseProxy.h */; };
+		C8459D5F156E666700EAF9F4 /* TiMobeelizerSdkDatabaseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D48156E666700EAF9F4 /* TiMobeelizerSdkDatabaseProxy.m */; };
+		C8459D60156E666700EAF9F4 /* TiMobeelizerSdkEntityProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D49156E666700EAF9F4 /* TiMobeelizerSdkEntityProxy.h */; };
+		C8459D61156E666700EAF9F4 /* TiMobeelizerSdkEntityProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D4A156E666700EAF9F4 /* TiMobeelizerSdkEntityProxy.m */; };
+		C8459D62156E666700EAF9F4 /* TiMobeelizerSdkErrorsProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D4B156E666700EAF9F4 /* TiMobeelizerSdkErrorsProxy.h */; };
+		C8459D63156E666700EAF9F4 /* TiMobeelizerSdkErrorsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D4C156E666700EAF9F4 /* TiMobeelizerSdkErrorsProxy.m */; };
+		C8459D64156E666700EAF9F4 /* TiMobeelizerSdkFileProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D4D156E666700EAF9F4 /* TiMobeelizerSdkFileProxy.h */; };
+		C8459D65156E666700EAF9F4 /* TiMobeelizerSdkFileProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D4E156E666700EAF9F4 /* TiMobeelizerSdkFileProxy.m */; };
+		C8459D66156E666700EAF9F4 /* TiMobeelizerSdkUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = C8459D4F156E666700EAF9F4 /* TiMobeelizerSdkUtil.h */; };
+		C8459D67156E666700EAF9F4 /* TiMobeelizerSdkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C8459D50156E666700EAF9F4 /* TiMobeelizerSdkUtil.m */; };
+		C8459D69156E668700EAF9F4 /* TiMobeelizerSdk_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = C8459D68156E668700EAF9F4 /* TiMobeelizerSdk_Prefix.pch */; };
+		C8F8B65C156A4A2400D38924 /* app.js in Sources */ = {isa = PBXBuildFile; fileRef = C8F8B659156A4A2300D38924 /* app.js */; };
+		C8F8B662156A4B3B00D38924 /* MobeelizerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F8B661156A4B3B00D38924 /* MobeelizerSDK.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24416B8411C4CA280047AFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = mobeelizersdk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DD6CF71134B3F500162E58 /* TiMobeelizerSdkModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkModule.h; path = Classes/TiMobeelizerSdkModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* TiMobeelizerSdkModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkModule.m; path = Classes/TiMobeelizerSdkModule.m; sourceTree = "<group>"; };
+		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
+		24DE9E0F11C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkModuleAssets.h; path = Classes/TiMobeelizerSdkModuleAssets.h; sourceTree = "<group>"; };
+		24DE9E1011C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TiMobeelizerSdkModuleAssets.mm; path = Classes/TiMobeelizerSdkModuleAssets.mm; sourceTree = "<group>"; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C8459D38156E64F900EAF9F4 /* index.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = index.md; path = documentation/index.md; sourceTree = "<group>"; };
+		C8459D3B156E666700EAF9F4 /* TiMobeelizerSdkCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkCallback.h; path = Classes/TiMobeelizerSdkCallback.h; sourceTree = "<group>"; };
+		C8459D3C156E666700EAF9F4 /* TiMobeelizerSdkCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkCallback.m; path = Classes/TiMobeelizerSdkCallback.m; sourceTree = "<group>"; };
+		C8459D3D156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.h; path = Classes/TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.h; sourceTree = "<group>"; };
+		C8459D3E156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.m; path = Classes/TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.m; sourceTree = "<group>"; };
+		C8459D3F156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkCriteriaBuilderCriterionProxy.h; path = Classes/TiMobeelizerSdkCriteriaBuilderCriterionProxy.h; sourceTree = "<group>"; };
+		C8459D40156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkCriteriaBuilderCriterionProxy.m; path = Classes/TiMobeelizerSdkCriteriaBuilderCriterionProxy.m; sourceTree = "<group>"; };
+		C8459D41156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.h; path = Classes/TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.h; sourceTree = "<group>"; };
+		C8459D42156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.m; path = Classes/TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.m; sourceTree = "<group>"; };
+		C8459D43156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkCriteriaBuilderOrderProxy.h; path = Classes/TiMobeelizerSdkCriteriaBuilderOrderProxy.h; sourceTree = "<group>"; };
+		C8459D44156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkCriteriaBuilderOrderProxy.m; path = Classes/TiMobeelizerSdkCriteriaBuilderOrderProxy.m; sourceTree = "<group>"; };
+		C8459D45156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkCriteriaBuilderProxy.h; path = Classes/TiMobeelizerSdkCriteriaBuilderProxy.h; sourceTree = "<group>"; };
+		C8459D46156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkCriteriaBuilderProxy.m; path = Classes/TiMobeelizerSdkCriteriaBuilderProxy.m; sourceTree = "<group>"; };
+		C8459D47156E666700EAF9F4 /* TiMobeelizerSdkDatabaseProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkDatabaseProxy.h; path = Classes/TiMobeelizerSdkDatabaseProxy.h; sourceTree = "<group>"; };
+		C8459D48156E666700EAF9F4 /* TiMobeelizerSdkDatabaseProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkDatabaseProxy.m; path = Classes/TiMobeelizerSdkDatabaseProxy.m; sourceTree = "<group>"; };
+		C8459D49156E666700EAF9F4 /* TiMobeelizerSdkEntityProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkEntityProxy.h; path = Classes/TiMobeelizerSdkEntityProxy.h; sourceTree = "<group>"; };
+		C8459D4A156E666700EAF9F4 /* TiMobeelizerSdkEntityProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkEntityProxy.m; path = Classes/TiMobeelizerSdkEntityProxy.m; sourceTree = "<group>"; };
+		C8459D4B156E666700EAF9F4 /* TiMobeelizerSdkErrorsProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkErrorsProxy.h; path = Classes/TiMobeelizerSdkErrorsProxy.h; sourceTree = "<group>"; };
+		C8459D4C156E666700EAF9F4 /* TiMobeelizerSdkErrorsProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkErrorsProxy.m; path = Classes/TiMobeelizerSdkErrorsProxy.m; sourceTree = "<group>"; };
+		C8459D4D156E666700EAF9F4 /* TiMobeelizerSdkFileProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkFileProxy.h; path = Classes/TiMobeelizerSdkFileProxy.h; sourceTree = "<group>"; };
+		C8459D4E156E666700EAF9F4 /* TiMobeelizerSdkFileProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkFileProxy.m; path = Classes/TiMobeelizerSdkFileProxy.m; sourceTree = "<group>"; };
+		C8459D4F156E666700EAF9F4 /* TiMobeelizerSdkUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkUtil.h; path = Classes/TiMobeelizerSdkUtil.h; sourceTree = "<group>"; };
+		C8459D50156E666700EAF9F4 /* TiMobeelizerSdkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkUtil.m; path = Classes/TiMobeelizerSdkUtil.m; sourceTree = "<group>"; };
+		C8459D68156E668700EAF9F4 /* TiMobeelizerSdk_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiMobeelizerSdk_Prefix.pch; sourceTree = "<group>"; };
+		C8F8B659156A4A2300D38924 /* app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = app.js; path = example/app.js; sourceTree = "<group>"; };
+		C8F8B65A156A4A2300D38924 /* module.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = module.xcconfig; sourceTree = "<group>"; };
+		C8F8B65B156A4A2300D38924 /* timodule.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = timodule.xml; sourceTree = "<group>"; };
+		C8F8B661156A4B3B00D38924 /* MobeelizerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MobeelizerSDK.framework; sourceTree = "<group>"; };
+		C8F8B666156A5E5A00D38924 /* application.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = application.xml; path = example/application.xml; sourceTree = "<group>"; };
+		C8F8B667156A5E5A00D38924 /* mobeelizer.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mobeelizer.properties; path = example/mobeelizer.properties; sourceTree = "<group>"; };
+		C8F8B688156E0CAC00D38924 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C8F8B689156E0CAC00D38924 /* manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = manifest; sourceTree = "<group>"; };
+		C8F8B68A156E0CAD00D38924 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		C8F8B68B156E0FD000D38924 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		D2AAC07E0554694100DB518D /* libTiMobeelizerSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiMobeelizerSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				C8F8B662156A4B3B00D38924 /* MobeelizerSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libTiMobeelizerSdk.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* mobeelizersdk */ = {
+			isa = PBXGroup;
+			children = (
+				C8F8B68B156E0FD000D38924 /* CHANGELOG.md */,
+				C8F8B688156E0CAC00D38924 /* LICENSE */,
+				C8F8B689156E0CAC00D38924 /* manifest */,
+				C8F8B68A156E0CAD00D38924 /* README */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				C8F8B65E156A4A2F00D38924 /* Example */,
+				C8459D39156E64FF00EAF9F4 /* Documentation */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = mobeelizersdk;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8F8B661156A4B3B00D38924 /* MobeelizerSDK.framework */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C8459D3B156E666700EAF9F4 /* TiMobeelizerSdkCallback.h */,
+				C8459D3C156E666700EAF9F4 /* TiMobeelizerSdkCallback.m */,
+				C8459D3D156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.h */,
+				C8459D3E156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.m */,
+				C8459D3F156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionProxy.h */,
+				C8459D40156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionProxy.m */,
+				C8459D41156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.h */,
+				C8459D42156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.m */,
+				C8459D43156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderProxy.h */,
+				C8459D44156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderProxy.m */,
+				C8459D45156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderProxy.h */,
+				C8459D46156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderProxy.m */,
+				C8459D47156E666700EAF9F4 /* TiMobeelizerSdkDatabaseProxy.h */,
+				C8459D48156E666700EAF9F4 /* TiMobeelizerSdkDatabaseProxy.m */,
+				C8459D49156E666700EAF9F4 /* TiMobeelizerSdkEntityProxy.h */,
+				C8459D4A156E666700EAF9F4 /* TiMobeelizerSdkEntityProxy.m */,
+				C8459D4B156E666700EAF9F4 /* TiMobeelizerSdkErrorsProxy.h */,
+				C8459D4C156E666700EAF9F4 /* TiMobeelizerSdkErrorsProxy.m */,
+				C8459D4D156E666700EAF9F4 /* TiMobeelizerSdkFileProxy.h */,
+				C8459D4E156E666700EAF9F4 /* TiMobeelizerSdkFileProxy.m */,
+				C8459D4F156E666700EAF9F4 /* TiMobeelizerSdkUtil.h */,
+				C8459D50156E666700EAF9F4 /* TiMobeelizerSdkUtil.m */,
+				24DE9E0F11C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.h */,
+				24DE9E1011C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.mm */,
+				24DD6CF71134B3F500162E58 /* TiMobeelizerSdkModule.h */,
+				24DD6CF81134B3F500162E58 /* TiMobeelizerSdkModule.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C8459D68156E668700EAF9F4 /* TiMobeelizerSdk_Prefix.pch */,
+				C8F8B65B156A4A2300D38924 /* timodule.xml */,
+				C8F8B65A156A4A2300D38924 /* module.xcconfig */,
+				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		C8459D39156E64FF00EAF9F4 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				C8459D38156E64F900EAF9F4 /* index.md */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		C8F8B65E156A4A2F00D38924 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				C8F8B666156A5E5A00D38924 /* application.xml */,
+				C8F8B667156A5E5A00D38924 /* mobeelizer.properties */,
+				C8F8B659156A4A2300D38924 /* app.js */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DD6CF91134B3F500162E58 /* TiMobeelizerSdkModule.h in Headers */,
+				24DE9E1111C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.h in Headers */,
+				C8459D52156E666700EAF9F4 /* TiMobeelizerSdkCallback.h in Headers */,
+				C8459D54156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.h in Headers */,
+				C8459D56156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionProxy.h in Headers */,
+				C8459D58156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.h in Headers */,
+				C8459D5A156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderProxy.h in Headers */,
+				C8459D5C156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderProxy.h in Headers */,
+				C8459D5E156E666700EAF9F4 /* TiMobeelizerSdkDatabaseProxy.h in Headers */,
+				C8459D60156E666700EAF9F4 /* TiMobeelizerSdkEntityProxy.h in Headers */,
+				C8459D62156E666700EAF9F4 /* TiMobeelizerSdkErrorsProxy.h in Headers */,
+				C8459D64156E666700EAF9F4 /* TiMobeelizerSdkFileProxy.h in Headers */,
+				C8459D66156E666700EAF9F4 /* TiMobeelizerSdkUtil.h in Headers */,
+				C8459D69156E668700EAF9F4 /* TiMobeelizerSdk_Prefix.pch in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* mobeelizersdk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "mobeelizersdk" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mobeelizersdk;
+			productName = mobeelizersdk;
+			productReference = D2AAC07E0554694100DB518D /* libTiMobeelizerSdk.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "mobeelizersdk" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* mobeelizersdk */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* mobeelizersdk */,
+				24416B8111C4CA220047AFDD /* Build & Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416B8011C4CA220047AFDD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DD6CFA1134B3F500162E58 /* TiMobeelizerSdkModule.m in Sources */,
+				24DE9E1211C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.mm in Sources */,
+				C8F8B65C156A4A2400D38924 /* app.js in Sources */,
+				C8459D53156E666700EAF9F4 /* TiMobeelizerSdkCallback.m in Sources */,
+				C8459D55156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionFactoryProxy.m in Sources */,
+				C8459D57156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderCriterionProxy.m in Sources */,
+				C8459D59156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderFactoryProxy.m in Sources */,
+				C8459D5B156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderOrderProxy.m in Sources */,
+				C8459D5D156E666700EAF9F4 /* TiMobeelizerSdkCriteriaBuilderProxy.m in Sources */,
+				C8459D5F156E666700EAF9F4 /* TiMobeelizerSdkDatabaseProxy.m in Sources */,
+				C8459D61156E666700EAF9F4 /* TiMobeelizerSdkEntityProxy.m in Sources */,
+				C8459D63156E666700EAF9F4 /* TiMobeelizerSdkErrorsProxy.m in Sources */,
+				C8459D65156E666700EAF9F4 /* TiMobeelizerSdkFileProxy.m in Sources */,
+				C8459D67156E666700EAF9F4 /* TiMobeelizerSdkUtil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* mobeelizersdk */;
+			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				"ARCHS[sdk=iphoneos*]" = (
+					armv6,
+					armv7,
+				);
+				"ARCHS[sdk=iphonesimulator*]" = i386;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/TiMobeelizerSdk.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMobeelizerSdk_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = TiMobeelizerSdk;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				"ARCHS[sdk=iphoneos*]" = (
+					armv6,
+					armv7,
+				);
+				"ARCHS[sdk=iphonesimulator*]" = i386;
+				DSTROOT = /tmp/TiMobeelizerSdk.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMobeelizerSdk_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = TiMobeelizerSdk;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				"ARCHS[sdk=iphoneos*]" = (
+					armv6,
+					armv7,
+				);
+				"ARCHS[sdk=iphonesimulator*]" = i386;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/TiMobeelizerSdk.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMobeelizerSdk_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = TiMobeelizerSdk;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				"ARCHS[sdk=iphoneos*]" = (
+					armv6,
+					armv7,
+				);
+				"ARCHS[sdk=iphonesimulator*]" = i386;
+				DSTROOT = /tmp/TiMobeelizerSdk.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMobeelizerSdk_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = TiMobeelizerSdk;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		24416B8211C4CA220047AFDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & test";
+			};
+			name = Debug;
+		};
+		24416B8311C4CA220047AFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & test";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "mobeelizersdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "mobeelizersdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24416B8211C4CA220047AFDD /* Debug */,
+				24416B8311C4CA220047AFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

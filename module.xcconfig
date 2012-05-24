@@ -1,0 +1,3 @@
+FRAMEWORK_SEARCH_PATHS = $(SRCROOT) "$(PROJECT_DIR)/**"
+OTHER_LDFLAGS = $(inherited) -framework MobeelizerSDK
+
