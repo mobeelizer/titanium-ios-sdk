@@ -83,11 +83,11 @@
     </model>
     <model name="simpleSyncEntity">
       <fields>
-        <field name="title" required="true" type="TEXT">
-          <credentials>
-            <credential createAllowed="ALL" readAllowed="ALL" role="users-mobile" updateAllowed="ALL"/>
-          </credentials>
-        </field>
+          <field name="title" required="true" type="TEXT">
+              <credentials>
+                  <credential createAllowed="ALL" readAllowed="ALL" role="users-mobile" updateAllowed="ALL"/>
+              </credentials>
+          </field>
       </fields>
       <credentials>
         <credential createAllowed="ALL" deleteAllowed="ALL" readAllowed="ALL" resolveConflictAllowed="false" role="users-mobile" updateAllowed="ALL"/>

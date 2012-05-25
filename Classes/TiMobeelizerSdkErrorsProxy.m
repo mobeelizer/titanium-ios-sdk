@@ -66,10 +66,13 @@
     };   
     return array;
 }
-
 -(NSDictionary *)errorToDictionary:(MobeelizerError *)error {
     NSString *code = [TiMobeelizerSdkUtil errorCodeToString:[error code]];
     return [NSDictionary dictionaryWithObjectsAndKeys:[error message], @"message", [error arguments], @"args", code, @"code", nil];
+}
+
+-(id)toString:(id)args {
+    return [errors description];
 }
 
 @end

@@ -125,4 +125,17 @@
     return self.modified;
 }
 
+-(id)toString:(id)args {
+    NSMutableString *string = [NSMutableString string];
+    [string appendFormat:@"%@[", _model];
+    [string appendFormat:@"guid=%@,", _guid];
+    [string appendFormat:@"owner=%@,", _owner];
+    [string appendFormat:@"modified=%@,", _modified ? @"true" : @"false"];
+    [string appendFormat:@"conflicted=%@,", _conflicted ? @"true" : @"false"];
+    [string appendFormat:@"deleted=%@,", _deleted ? @"true" : @"false"];
+    [string appendFormat:@"fields=%@e  ]", _fields];
+    return string;
+
+}
+
 @end
