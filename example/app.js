@@ -335,7 +335,7 @@ if(Count == 0) {
 
 MobeelizerDatabase.removeAll("fileSyncEntity")
 
-var MobeelizerFile = Mobeelizer.createFile("name", Ti.Filesystem.getFile('application.xml').read.blob);
+var MobeelizerFile = Mobeelizer.createFile("name", Ti.Filesystem.getFile('application.xml').read());
 
 var Entity6 = MobeelizerDatabase.entity("fileSyncEntity"); 
 
