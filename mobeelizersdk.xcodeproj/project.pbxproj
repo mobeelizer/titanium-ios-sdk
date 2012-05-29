@@ -96,6 +96,10 @@
 		C8459D50156E666700EAF9F4 /* TiMobeelizerSdkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkUtil.m; path = Classes/TiMobeelizerSdkUtil.m; sourceTree = "<group>"; };
 		C8459D68156E668700EAF9F4 /* TiMobeelizerSdk_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiMobeelizerSdk_Prefix.pch; sourceTree = "<group>"; };
 		C8459D6A156E675600EAF9F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		C8C5C26715750A840019A2F0 /* criteriabuilder.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = criteriabuilder.md; path = documentation/criteriabuilder.md; sourceTree = "<group>"; };
+		C8C5C26815750A840019A2F0 /* database.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = database.md; path = documentation/database.md; sourceTree = "<group>"; };
+		C8C5C26915750A840019A2F0 /* errors.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = errors.md; path = documentation/errors.md; sourceTree = "<group>"; };
+		C8C5C26A15750A840019A2F0 /* file.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = file.md; path = documentation/file.md; sourceTree = "<group>"; };
 		C8F8B659156A4A2300D38924 /* app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = app.js; path = example/app.js; sourceTree = "<group>"; };
 		C8F8B65A156A4A2300D38924 /* module.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = module.xcconfig; sourceTree = "<group>"; };
 		C8F8B65B156A4A2300D38924 /* timodule.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = timodule.xml; sourceTree = "<group>"; };
@@ -202,6 +206,10 @@
 		C8459D39156E64FF00EAF9F4 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				C8C5C26715750A840019A2F0 /* criteriabuilder.md */,
+				C8C5C26815750A840019A2F0 /* database.md */,
+				C8C5C26915750A840019A2F0 /* errors.md */,
+				C8C5C26A15750A840019A2F0 /* file.md */,
 				C8459D38156E64F900EAF9F4 /* index.md */,
 			);
 			name = Documentation;
