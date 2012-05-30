@@ -2,7 +2,7 @@
 
 ## Description
 
-The Mobeelizer SDK is a module to connect Titanium application with [Mobeelizer](http://www.mobeelizer.com/) platform. See [Mobeelizer SDK reference](http://mobeelizer.com/docs/titanium/titanium-client) for more information.
+The Mobeelizer SDK is a module to connect Titanium application with [Mobeelizer](http://www.mobeelizer.com/) platform. See [Mobeelizer SDK reference](http://mobeelizer.com/docs/titanium/titanium-references) for more information.
 
 ## Accessing the Mobeelizer SDK Module
 
