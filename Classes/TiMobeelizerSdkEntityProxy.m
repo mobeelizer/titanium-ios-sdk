@@ -25,7 +25,7 @@
     @private NSMutableDictionary *_fields;
 }
 
-@synthesize model=_model, guid=_guid, deleted=_deleted, conflicted=_conflicted, modified=_modified, owner=_owner;
+@synthesize model=_model, guid=_guid, deleted=_deleted, conflicted=_conflicted, modified=_modified, owner=_owner, group=_group;
 
 -(id)initWithModel:(NSString *)model {
     if(self = [super self]) {
@@ -36,6 +36,7 @@
         _conflicted = NUMBOOL(FALSE);
         _modified = NUMBOOL(FALSE);
         _owner = nil;
+        _group = nil;
     }
     return self;
 }
@@ -64,6 +65,7 @@
     if(_deleted != nil) { [dictionary setObject:_deleted forKey:@"deleted"]; }
     if(_modified != nil) { [dictionary setObject:_modified forKey:@"modified"]; }   
     if(_owner != nil) { [dictionary setObject:_owner forKey:@"owner"]; }   
+    if(_group != nil) { [dictionary setObject:_group forKey:@"group"]; }   
 
     return dictionary;
 }
@@ -72,6 +74,7 @@
     RELEASE_TO_NIL(_model);
     RELEASE_TO_NIL(_guid);
     RELEASE_TO_NIL(_owner);
+    RELEASE_TO_NIL(_group);
     RELEASE_TO_NIL(_conflicted);
     RELEASE_TO_NIL(_deleted);
     RELEASE_TO_NIL(_modified);
@@ -86,10 +89,11 @@
     _modified = [[dictionary objectForKey:@"modified"] retain];
     _deleted = [[dictionary objectForKey:@"deleted"] retain];
     _owner = [[dictionary objectForKey:@"owner"] retain];
+    _group = [[dictionary objectForKey:@"group"] retain];
     _fields = [[[NSMutableDictionary alloc] init] retain];
     
     for(NSString *key in [dictionary allKeys]) {
-        if([key isEqualToString:@"model"] || [key isEqualToString:@"guid"] || [key isEqualToString:@"conflicted"] || [key isEqualToString:@"modified"] || [key isEqualToString:@"deleted"] || [key isEqualToString:@"owner"]) {
+        if([key isEqualToString:@"model"] || [key isEqualToString:@"guid"] || [key isEqualToString:@"conflicted"] || [key isEqualToString:@"modified"] || [key isEqualToString:@"deleted"] || [key isEqualToString:@"owner"] || [key isEqualToString:@"group"]) {
             continue;
         }
         id value = [dictionary objectForKey:key];
@@ -130,6 +134,7 @@
     [string appendFormat:@"%@[", _model];
     [string appendFormat:@"guid=%@,", _guid];
     [string appendFormat:@"owner=%@,", _owner];
+    [string appendFormat:@"group=%@,", _group];
     [string appendFormat:@"modified=%@,", _modified ? @"true" : @"false"];
     [string appendFormat:@"conflicted=%@,", _conflicted ? @"true" : @"false"];
     [string appendFormat:@"deleted=%@,", _deleted ? @"true" : @"false"];

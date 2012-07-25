@@ -30,6 +30,7 @@
 @property(atomic,readwrite,assign) NSNumber *modified;
 @property(atomic,readwrite,assign) NSNumber *conflicted;
 @property(atomic,readwrite,assign) NSNumber *owner;
+@property(atomic,readwrite,assign) NSNumber *group;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 -(id)initWithModel:(NSString *)model;

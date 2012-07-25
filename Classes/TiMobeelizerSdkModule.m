@@ -44,12 +44,26 @@
 -(void)startup {
 	[super startup];
     
+    NSString* properties = [[NSBundle mainBundle] pathForResource:@"mobeelizer" ofType:@"properties"];    
+    NSString* contents = [NSString stringWithContentsOfFile:properties encoding:NSUTF8StringEncoding error:nil];    
+    NSArray* lines = [contents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     NSMutableDictionary *configuration = [NSMutableDictionary dictionary];
-    [configuration setValue:@"mobile" forKey:@"device"];
-    [configuration setValue:@"test" forKey:@"mode"];
-    [configuration setValue:@"users-mobile" forKey:@"developmentRole"];
-    [configuration setValue:@"application.xml" forKey:@"definitionAsset"];
     
+    for (NSString* line in lines) {
+        NSArray* property = [line componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"="]];
+        NSString* propertyName = [[property objectAtIndex:0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        if([propertyName hasPrefix:@"#"]) {
+            continue;
+        }
+        
+        NSString* propertyValue = [[[property subarrayWithRange:NSMakeRange(1,property.count - 1)] componentsJoinedByString:@"="] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        
+        NSLog(@"[INFO] %@ configuration: %@ = %@", self, propertyName, propertyValue);
+        [configuration setObject:propertyValue forKey:propertyName];        
+    }
+        
     [Mobeelizer createWithConfiguration:configuration];
 	
 	NSLog(@"[INFO] %@ loaded",self);
@@ -307,11 +321,5 @@
 -(id)getDatabase:(id)args {
     return [[[TiMobeelizerSdkDatabaseProxy alloc] initWithDatabase:[Mobeelizer database]] autorelease];
 }
-
--(id)ddddd:(id)args {
-    ENSURE_SINGLE_ARG(args, KrollCallback);    
-    [self _fireEventToListener:@"eventName" withObject:[NSDictionary dictionaryWithObject:@"v" forKey:@"k"] listener:args thisObject:self];
-}
-
 
 @end

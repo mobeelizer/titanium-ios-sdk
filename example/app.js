@@ -199,6 +199,10 @@ if(!Entity1.getOwner()) {
     throw "##### 22 owner is null";
 }
 
+if(!Entity1.getGroup()) {
+    throw "##### 22 group is null";
+}
+
 if(!Entity1.isModified()) {
     throw "##### 22 should be modified";
 }
@@ -472,7 +476,7 @@ var MobeelizerOrder = MobeelizerDatabase.Order;
 
 MobeelizerCriteriaBuilder.setMaxResults(1).setFirstAndMaxResults(1, 10).addOrder(MobeelizerOrder.desc("title")).addOrder(MobeelizerOrder.asc("title"));
 
-MobeelizerCriteriaBuilder.add(MobeelizerRestriction.guidNe("123")).add(MobeelizerRestriction.ownerNe("123")).add(MobeelizerRestriction.isNotConflicted());
+MobeelizerCriteriaBuilder.add(MobeelizerRestriction.guidNe("123")).add(MobeelizerRestriction.ownerNe("123")).add(MobeelizerRestriction.groupNe("123")).add(MobeelizerRestriction.isNotConflicted());
 
 MobeelizerCriteriaBuilder.add(MobeelizerRestriction.ne("title", "z")).add(MobeelizerRestriction.le("title", "d")).add(MobeelizerRestriction.lt("title", "e")).add(MobeelizerRestriction.ge("title", "b")).add(MobeelizerRestriction.gt("title", "a"));
 
@@ -518,7 +522,7 @@ if(List[0].getField("title") != "c" || List[1].getField("title") != "b") {
 
 MobeelizerCriteriaBuilder.setFirstAndMaxResults(0, 1);
 
-MobeelizerCriteriaBuilder.add(MobeelizerRestriction.guidEq(Entity.getGuid())).add(MobeelizerRestriction.ownerEq(Entity.getOwner()));
+MobeelizerCriteriaBuilder.add(MobeelizerRestriction.guidEq(Entity.getGuid())).add(MobeelizerRestriction.ownerEq(Entity.getOwner())).add(MobeelizerRestriction.groupEq(Entity.getGroup()));
 
 MobeelizerCriteriaBuilder.add(MobeelizerRestriction.allEq({title: "d"}));
 

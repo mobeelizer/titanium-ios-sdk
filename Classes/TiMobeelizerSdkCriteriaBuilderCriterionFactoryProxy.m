@@ -79,6 +79,11 @@
     return [self wrap:[MobeelizerCriterion ownerEq:args]];
 }
 
+-(id)groupEq:(id)args {
+    ENSURE_SINGLE_ARG(args, NSString);
+    return [self wrap:[MobeelizerCriterion groupEq:args]];
+}
+
 -(id)guidNe:(id)args {
     ENSURE_SINGLE_ARG(args, NSString);
     return [self wrap:[MobeelizerCriterion guidNe:args]];
@@ -87,6 +92,11 @@
 -(id)ownerNe:(id)args {
     ENSURE_SINGLE_ARG(args, NSString);
     return [self wrap:[MobeelizerCriterion ownerNe:args]];
+}
+
+-(id)groupNe:(id)args {
+    ENSURE_SINGLE_ARG(args, NSString);
+    return [self wrap:[MobeelizerCriterion groupNe:args]];
 }
 
 -(id)isConflicted:(id)args {

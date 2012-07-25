@@ -66,9 +66,17 @@ Create criterion that checks if guid isn't equal to the given value.
 
 Create criterion that checks if owner is equal to the given value.
 
+### MobeelizerCriterion MobeelizerDatabase.Restriction.groupEq(string value)
+
+Create criterion that checks if group is equal to the given value.
+
 ### MobeelizerCriterion MobeelizerDatabase.Restriction.ownerNe(string value)
 
 Create criterion that checks if owner isn't equal to the given value.
+
+### MobeelizerCriterion MobeelizerDatabase.Restriction.groupNe(string value)
+
+Create criterion that checks if group isn't equal to the given value.
 
 ### MobeelizerCriterion MobeelizerDatabase.Restriction.isConflicted()
 
