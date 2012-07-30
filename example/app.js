@@ -185,7 +185,7 @@ if(Entity1.getGuid()) {
 
 var Errors = MobeelizerDatabase.save(Entity1);
 
-if(!Errors.isValid()) {
+if(Errors) {
     throw "##### 21 entity hasn't been saved, validation errors";
 } else {
     Ti.API.info("##### 21 entity has been saved");
@@ -221,7 +221,7 @@ Entity2.putField("title", "hurra2");
 
 var Errors = MobeelizerDatabase.save(Entity2);
 
-if(!Errors.isValid()) {
+if(Errors) {
     throw "##### 23 entity hasn't been saved, validation errors";
 } else {
     Ti.API.info("##### 23 entity has been saved");
@@ -233,7 +233,7 @@ Entity3.putField("title", "hurra3");
 
 var Errors = MobeelizerDatabase.save(Entity3);
 
-if(!Errors.isValid()) {
+if(Errors) {
     throw "##### 24 entity hasn't been saved, validation errors";
 } else {
     Ti.API.info("##### 24 entity has been saved");
@@ -309,7 +309,11 @@ if(Count != 1) {
     Ti.API.info("##### 32 valid count");
 }
 
-MobeelizerDatabase.removeAll("simpleSyncEntity");
+var Errors = MobeelizerDatabase.removeAll("simpleSyncEntity");
+
+if(Errors) {
+    throw "##### 33 cannot delete => " + Errors;
+}
 
 var Count = MobeelizerDatabase.count("simpleSyncEntity");
 
@@ -347,7 +351,7 @@ Entity6.putField("photo", MobeelizerFile);
 
 var Errors = MobeelizerDatabase.save(Entity6);
 
-if(!Errors.isValid()) {
+if(Errors) {
     throw "##### 36 entity hasn't been saved, validation errors";
 } else {
     Ti.API.info("##### 36 entity has been saved");
@@ -447,7 +451,7 @@ Entity.putField("title", "b");
 
 var Errors = MobeelizerDatabase.save(Entity);
 
-if(!Errors.isValid()) {
+if(Errors) {
     throw "##### 51 entity hasn't been saved, validation errors";
 }
 
@@ -457,7 +461,7 @@ Entity.putField("title", "c");
 
 var Errors = MobeelizerDatabase.save(Entity);
 
-if(!Errors.isValid()) {
+if(Errors) {
     throw "##### 52 entity hasn't been saved, validation errors";
 }
 
@@ -467,7 +471,7 @@ Entity.putField("title", "d");
 
 var Errors = MobeelizerDatabase.save(Entity);
 
-if(!Errors.isValid()) {
+if(Errors) {
     throw "##### 53 entity hasn't been saved, validation errors";
 }
 

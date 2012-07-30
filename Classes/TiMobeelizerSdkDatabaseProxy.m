@@ -51,23 +51,35 @@
     return NUMINT([database countByModel:args]);
 }
 
--(void)remove:(id)args {
+-(id)remove:(id)args {
     NSString *model;
     NSString *guid;
     ENSURE_ARG_AT_INDEX(model, args, 0, NSString);
     ENSURE_ARG_AT_INDEX(guid, args, 1, NSString);
-    [database removeByModel:model withGuid:guid];
+    MobeelizerErrors *errors = [database removeByModel:model withGuid:guid];
+    if(errors == nil) {
+        return nil;
+    }
+    return [[[TiMobeelizerSdkErrorsProxy alloc] initWithErrors:errors] autorelease];
 }
 
--(void)removeAll:(id)args {
+-(id)removeAll:(id)args {
     ENSURE_SINGLE_ARG(args, NSString);
-    [database removeAllByModel:args];
+    MobeelizerErrors *errors = [database removeAllByModel:args];
+    if(errors == nil) {
+        return nil;
+    }
+    return [[[TiMobeelizerSdkErrorsProxy alloc] initWithErrors:errors] autorelease];
 }
 
--(void)removeObject:(id)args {
+-(id)removeObject:(id)args {
     ENSURE_SINGLE_ARG(args, TiMobeelizerSdkEntityProxy);
     NSDictionary *dictionary = [args toDictionary];
-    [database remove:dictionary];
+    MobeelizerErrors *errors = [database remove:dictionary];
+    if(errors == nil) {
+        return nil;
+    }
+    return [[[TiMobeelizerSdkErrorsProxy alloc] initWithErrors:errors] autorelease];
 }
 
 -(id)exists:(id)args {
@@ -115,6 +127,9 @@
     NSDictionary *dictionary = [args toDictionary];
     MobeelizerErrors *errors = [database save:dictionary];    
     [args fromDictionary:dictionary];
+    if(errors == nil) {
+        return nil;
+    }
     return [[[TiMobeelizerSdkErrorsProxy alloc] initWithErrors:errors] autorelease];
 }
 
