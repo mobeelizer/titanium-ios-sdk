@@ -1,2 +1,2 @@
-FRAMEWORK_SEARCH_PATHS = $(SRCROOT) "$(PROJECT_DIR)/**" $(FRAMEWORK_SEARCH_PATHS) "~/Workspace/titanium-ios-sdk/**" "~/Documents/workspace/titanium-ios-sdk/**"
+FRAMEWORK_SEARCH_PATHS = $(SRCROOT) "$(PROJECT_DIR)/**" $(FRAMEWORK_SEARCH_PATHS)  $(LIBRARY_SEARCH_PATHS) "~/Workspace/titanium-ios-sdk/**" "~/Documents/workspace/titanium-ios-sdk/**"
 OTHER_LDFLAGS = $(inherited) -framework MobeelizerSDK
