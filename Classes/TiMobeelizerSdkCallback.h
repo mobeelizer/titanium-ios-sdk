@@ -23,8 +23,9 @@
 #import "TiProxy.h"
 #import "KrollCallback.h"
 
-@interface TiMobeelizerSdkCallback : TiProxy<MobeelizerLoginCallback, MobeelizerSyncCallback, MobeelizerSyncListener>
+@interface TiMobeelizerSdkCallback : TiProxy<MobeelizerOperationCallback, MobeelizerSyncListener>
 
-- (id)initWithCallback:(KrollCallback *)callback;
-
+- (id)initWithSuccessCallback:(KrollCallback *)krollSuccessCallback;
+- (id)initWithSuccessCallback:(KrollCallback *)krollSuccessCallback andFailureCallback:(KrollCallback *)krollFailureCallback;
+        
 @end

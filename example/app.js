@@ -34,18 +34,18 @@ if(loggedIn) {
     Ti.API.info("##### 2 user is not logged in");
 }
 
-var status = Mobeelizer.loginAndWait("user", "invalid-password");
+var Error = Mobeelizer.loginAndWait("user", "invalid-password");
 
-if(status == Mobeelizer.LOGIN_OK) {
-    throw "##### 3 invalid login status, should not be OK => " + status;
+if(!Error) {
+    throw "##### 3 invalid login status, should not be OK";
 } else {
-    Ti.API.info("##### 3 valid login status");
+    Ti.API.info("##### 3 valid login status => " + Error);
 }
 
-var status = Mobeelizer.loginAndWait("user", "password");
+var Error = Mobeelizer.loginAndWait("user", "password");
 
-if(status != Mobeelizer.LOGIN_OK) {
-    throw "##### 4 invalid login status, should be OK => " + status;
+if(Error) {
+    throw "##### 4 invalid login status, should be OK => " + Error;
 } else {
     Ti.API.info("##### 4 valid login status");
 }
@@ -68,10 +68,10 @@ if(loggedIn) {
     Ti.API.info("##### 6 user is not logged in");
 }
 
-var status = Mobeelizer.loginToInstanceAndWait("test", "user", "password");
+var Error = Mobeelizer.loginToInstanceAndWait("test", "user", "password");
 
-if(status != Mobeelizer.LOGIN_OK) {
-    throw "##### 7 invalid login status, should be OK => " + status;
+if(Error) {
+    throw "##### 7 invalid login status, should be OK => " + Error;
 } else {
     Ti.API.info("##### 7 valid login status");
 }
@@ -86,84 +86,84 @@ if(status != Mobeelizer.SYNC_FINISHED_WITH_SUCCESS) {
     Ti.API.info("##### 8 valid sync status");
 }
 
-var status = Mobeelizer.syncAllAndWait();
+var Error = Mobeelizer.syncAllAndWait();
 
-if(status != Mobeelizer.SYNC_FINISHED_WITH_SUCCESS) {
-    throw "##### 9 invalid sync status, should be FINISHED_WITH_SUCCESS => " + status;
+if(Error) {
+    throw "##### 9 invalid sync status, should be FINISHED_WITH_SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 9 valid sync status");
 }
 
-var status = Mobeelizer.syncAndWait();
+var Error = Mobeelizer.syncAndWait();
 
-if(status != Mobeelizer.SYNC_FINISHED_WITH_SUCCESS) {
-    throw "##### 10 invalid sync status, should be FINISHED_WITH_SUCCESS => " + status;
+if(Error) {
+    throw "##### 10 invalid sync status, should be FINISHED_WITH_SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 10 valid sync status");
 }
 
 // ------------------------------------
 
-var status = Mobeelizer.registerForRemoteNotifications("TODO");
+var Error = Mobeelizer.registerForRemoteNotifications("TODO");
 
-if(status != Mobeelizer.COMMUNICATION_SUCCESS) {
-    throw "##### 11 invalid communitation status, should be SUCCESS => " + status;
+if(Error) {
+    throw "##### 11 invalid communitation status, should be SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 11 valid communication status");
 }
 
-var status = Mobeelizer.unregisterForRemoteNotifications();
+var Error = Mobeelizer.unregisterForRemoteNotifications();
 
-if(status != Mobeelizer.COMMUNICATION_SUCCESS) {
-    throw "##### 12 invalid communitation status, should be SUCCESS => " + status;
+if(Error) {
+    throw "##### 12 invalid communitation status, should be SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 12 valid communication status");
 }
 
-var status = Mobeelizer.sendRemoteNotification({ message: "test" });
+var Error = Mobeelizer.sendRemoteNotification({ message: "test" });
 
-if(status != Mobeelizer.COMMUNICATION_SUCCESS) {
-    throw "##### 13 invalid communitation status, should be SUCCESS => " + status;
+if(Error) {
+    throw "##### 13 invalid communitation status, should be SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 13 valid communication status");
 }
 
-var status = Mobeelizer.sendRemoteNotificationToDevice({ message: "test" }, "mobile" );
+var Error = Mobeelizer.sendRemoteNotificationToDevice({ message: "test" }, "mobile" );
 
-if(status != Mobeelizer.COMMUNICATION_SUCCESS) {
-    throw "##### 14 invalid communitation status, should be SUCCESS => " + status;
+if(Error) {
+    throw "##### 14 invalid communitation status, should be SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 14 valid communication status");
 }
 
-var status = Mobeelizer.sendRemoteNotificationToUsers({ message: "test" }, ["user", "user2"] );
+var Error = Mobeelizer.sendRemoteNotificationToUsers({ message: "test" }, ["user", "user2"] );
 
-if(status != Mobeelizer.COMMUNICATION_SUCCESS) {
-    throw "##### 15 invalid communitation status, should be SUCCESS => " + status;
+if(Error) {
+    throw "##### 15 invalid communitation status, should be SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 15 valid communication status");
 }
 
-var status = Mobeelizer.sendRemoteNotificationToUsersOnDevice({ message: "test" }, ["user", "user2"], "mobile" );
+var Error = Mobeelizer.sendRemoteNotificationToUsersOnDevice({ message: "test" }, ["user", "user2"], "mobile" );
 
-if(status != Mobeelizer.COMMUNICATION_SUCCESS) {
-    throw "##### 16 invalid communitation status, should be SUCCESS => " + status;
+if(Error) {
+    throw "##### 16 invalid communitation status, should be SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 16 valid communication status");
 }
 
-var status = Mobeelizer.sendRemoteNotificationToGroup({ message: "test" }, "users" );
+var Error = Mobeelizer.sendRemoteNotificationToGroup({ message: "test" }, "users" );
 
-if(status != Mobeelizer.COMMUNICATION_SUCCESS) {
-    throw "##### 17 invalid communitation status, should be SUCCESS => " + status;
+if(Error) {
+    throw "##### 17 invalid communitation status, should be SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 17 valid communication status");
 }
 
-var status = Mobeelizer.sendRemoteNotificationToGroupOnDevice({ message: "test" }, "users", "mobile" );
+var Error = Mobeelizer.sendRemoteNotificationToGroupOnDevice({ message: "test" }, "users", "mobile" );
 
-if(status != Mobeelizer.COMMUNICATION_SUCCESS) {
-    throw "##### 18 invalid communitation status, should be SUCCESS => " + status;
+if(Error) {
+    throw "##### 18 invalid communitation status, should be SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 18 valid communication status");
 }
@@ -287,10 +287,10 @@ if(Entity5) {
     Ti.API.info("##### 30 not exist");
 }
 
-var status = Mobeelizer.syncAndWait();
+var Error = Mobeelizer.syncAndWait();
 
-if(status != Mobeelizer.SYNC_FINISHED_WITH_SUCCESS) {
-    throw "##### 31 invalid sync status, should be FINISHED_WITH_SUCCESS => " + status;
+if(Error) {
+    throw "##### 31 invalid sync status, should be FINISHED_WITH_SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 31 valid sync status");
 }
@@ -323,10 +323,10 @@ if(Count != 0) {
     Ti.API.info("##### 33 valid count");
 }
 
-var status = Mobeelizer.syncAllAndWait();
+var Error = Mobeelizer.syncAllAndWait();
 
-if(status != Mobeelizer.SYNC_FINISHED_WITH_SUCCESS) {
-    throw "##### 34 invalid sync status, should be FINISHED_WITH_SUCCESS => " + status;
+if(Error) {
+    throw "##### 34 invalid sync status, should be FINISHED_WITH_SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 34 valid sync status");
 }
@@ -381,20 +381,20 @@ if(Entity6.getField("photo").getStream().text != MobeelizerFile2.getStream().tex
     throw "##### 41 differend file stream";   
 }
 
-var status = Mobeelizer.syncAndWait();
+var Error = Mobeelizer.syncAndWait();
 
-if(status != Mobeelizer.SYNC_FINISHED_WITH_SUCCESS) {
-    throw "##### 42 invalid sync status, should be FINISHED_WITH_SUCCESS => " + status;
+if(Error) {
+    throw "##### 42 invalid sync status, should be FINISHED_WITH_SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 42 valid sync status");
 }
 
 MobeelizerDatabase.removeAll("fileSyncEntity");
 
-var status = Mobeelizer.syncAllAndWait();
+var Error = Mobeelizer.syncAllAndWait();
 
-if(status != Mobeelizer.SYNC_FINISHED_WITH_SUCCESS) {
-    throw "##### 43 invalid sync status, should be FINISHED_WITH_SUCCESS => " + status;
+if(Error) {
+    throw "##### 43 invalid sync status, should be FINISHED_WITH_SUCCESS => " + Error;
 } else {
     Ti.API.info("##### 43 valid sync status");
 }
@@ -581,36 +581,25 @@ if(UniqueResult) {
 
 // ------------------------------------
 
-Mobeelizer.sync(function(e) { 
-    if(e.status != Mobeelizer.SYNC_FINISHED_WITH_SUCCESS) {
-        throw "@@@@@ 1 invalid sync status, should be FINISHED_WITH_SUCCESS => " + status;
-    } else {
-        Ti.API.info("@@@@@ 1 valid sync status");        
-    }
-                
-    Mobeelizer.syncAll(function(e) { 
-        if(e.status != Mobeelizer.SYNC_FINISHED_WITH_SUCCESS) {
-            throw "@@@@@ 2 invalid sync status, should be FINISHED_WITH_SUCCESS => " + status;
-        } else {
-            Ti.API.info("@@@@@ 2 valid sync status");        
-        }
-                       
-        Mobeelizer.login("user", "password", function(e) { 
-            if(e.status != Mobeelizer.LOGIN_OK) {
-                throw "@@@@@ 3 invalid login status, should be OK => " + status;
-            } else {
-                Ti.API.info("@@@@@ 3 valid login status");        
-            }
-                         
-            Mobeelizer.loginToInstance("test", "user", "password", function(e) { 
-                if(e.status != Mobeelizer.LOGIN_OK) {
-                    throw "@@@@@ 4 invalid login status, should be OK => " + status;
-                } else {
-                    Ti.API.info("@@@@@ 4 valid login status");        
-                }
+Mobeelizer.sync(function(e) {
+    Ti.API.info("@@@@@ 1 valid sync status");
+    Mobeelizer.syncAll(function(e) {
+        Ti.API.info("@@@@@ 2 valid sync status");
+        Mobeelizer.login("user", "password", function(e) {
+            Ti.API.info("@@@@@ 3 valid login status");
+            Mobeelizer.loginToInstance("test", "user", "password2", function(e) {
+                throw "@@@@@ 4 invalid login status, should not be OK";
+            }, function(e) {
+                Ti.API.info("@@@@@ 4 valid login status " + e.code + ", " + e.message);
             });
+        }, function(e) {
+            throw "@@@@@ 3 invalid login status, should be OK => " + e;
         });
+    }, function(e) {
+        throw "@@@@@ 2 invalid sync status, should be OK => " + e;
     });
+}, function(e) {
+    throw "@@@@@ 1 invalid sync status, should be FINISHED_WITH_SUCCESS => " + e;
 });
 
 // ------------------------------------

@@ -14,41 +14,21 @@ The Mobeelizer variable is a reference to the Module object.
 
 ## User Session
 
-### string LOGIN_OK
+### void login(string user, string password, function callbackOnSuccess, function callbackOnFailure)
 
-Login status. The user session has been successfully created.
+Create a user session for the given login, password and instance equal to the mode ("test" or "production"). Callback callbackOnSuccess will be invoked on finish with success, callbackOnFailure will be invoked otherwise - it receive the error in "code" and "message" event's element.
 
-### string LOGIN_AUTHENTICATION_FAILURE
+### void loginToInstance(string instance, string user, string password, function callbackOnSuccess, function callbackOnFailure)
 
-Login status. Login, password and instance do not match to any existing users.
+Create a user session for the given login, password and instance. Callback callbackOnSuccess will be invoked on finish with success, callbackOnFailure will be invoked otherwise - it receive the error in "code" and "message" event's element.
 
-### string LOGIN_CONNECTION_FAILURE
+### [MobeelizerOperationError](error.html) loginAndWait(string user, string password)
 
-Login status. Connection error. Look for the explanation in the application logs.
+Create a user session for the given login, password and instance equal to the mode ("test" or "production"). Return operation error or null if success. This version of method is synchronous and lock the invoker thread. Do not call this method in UI thread.
 
-### string LOGIN_MISSING_CONNECTION_FAILURE
+### [MobeelizerOperationError](error.html) loginToInstanceAndWait(string instance, string user, string password)
 
-Login status. Missing connection. First login requires active Internet connection.
-
-### string LOGIN_OTHER_FAILURE
-
-Login status. Unknown error. Look for the explanation in the instance logs and the application logs.
-
-### void login(string user, string password, function callback)
-
-Create a user session for the given login, password and instance equal to the mode ("test" or "production"). Callback will be invoked on finish and will receive the login status as "status" event's element.
-
-### void loginToInstance(string instance, string user, string password, function callback)
-
-Create a user session for the given login, password and instance. Callback will be invoked on finish and will receive the login status as "status" event's element.
-
-### string loginAndWait(string user, string password)
-
-Create a user session for the given login, password and instance equal to the mode ("test" or "production"). Return login status. This version of method is synchronous and lock the invoker thread. Do not call this method in UI thread.
-
-### string loginToInstanceAndWait(string instance, string user, string password)
-
-Create a user session for the given login, password and instance. Return login status. This version of method is synchronous and lock the invoker thread. Do not call this method in UI thread.
+Create a user session for the given login, password and instance. Return operation error or null if success. This version of method is synchronous and lock the invoker thread. Do not call this method in UI thread.
 
 ### boolean isLoggedIn()
 
@@ -92,21 +72,21 @@ Sync status. Sync has been finished successfully.
 
 Sync status. Sync has not been finished successfully. Look for the explanation in the application logs.
 
-### void sync(function callback)
+### void sync(function callbackOnSuccess, function callbackOnFailure)
 
-Start a differential sync. Callback will be invoked on finish and will receive the sync status as "status" event's element.
+Start a differential sync. Callback callbackOnSuccess will be invoked on finish with success, callbackOnFailure will be invoked otherwise - it receive the error in "code" and "message" event's element.
 
-### void syncAll(function callback)
+### void syncAll(function callbackOnSuccess, function callbackOnFailure)
 
-Start a full sync. Callback will be invoked on finish and will receive the sync status as "status" event's element.
+Start a full sync. Callback callbackOnSuccess will be invoked on finish with success, callbackOnFailure will be invoked otherwise - it receive the error in "code" and "message" event's element.
 
-### string syncAndWait()
+### [MobeelizerOperationError](error.html)  syncAndWait()
 
-Start a differential sync. Return sync status. This version of method is synchronous and lock the invoker thread. Do not call this method in UI thread.
+Start a differential sync. Return operation error or null if success. This version of method is synchronous and lock the invoker thread. Do not call this method in UI thread.
 
-### string syncAllAndWait()
+### [MobeelizerOperationError](error.html)  syncAllAndWait()
 
-Start a full sync. Return sync status. This version of method is synchronous and lock the invoker thread. Do not call this method in UI thread.
+Start a full sync. Return operation error or null if success. This version of method is synchronous and lock the invoker thread. Do not call this method in UI thread.
 
 ### string checkSyncStatus()
 
@@ -124,45 +104,37 @@ Database for the active user session.
 
 ## Remote Notifications
 
-### string COMMUNICATION_SUCCESS
+### [MobeelizerOperationError](error.html)  registerForRemoteNotifications(string token)
 
-Communication status. The operation has finished successfully.
+Register the token received from Apple Push Notification Service or Google C2DM. Return operation error or null if success.
 
-### string COMMUNICATION_FAILURE
+### [MobeelizerOperationError](error.html)  unregisterForRemoteNotifications()
 
-Communication status. The operation has failed.
+Unregister device from push notification service. Return operation error or null if success.
 
-### string registerForRemoteNotifications(string token)
+### [MobeelizerOperationError](error.html)  sendRemoteNotification(dictionary notification)
 
-Register the token received from Apple Push Notification Service or Google C2DM. Return communication status.
+Broadcast the remote notification. Return operation error or null if success.
 
-### string unregisterForRemoteNotifications()
+### [MobeelizerOperationError](error.html)  sendRemoteNotificationToDevice(dictionary notification, string device)
 
-Unregister device from push notification service. Return communication status.
+Broadcast the remote notification to given device. Return operation error or null if success.
 
-### string sendRemoteNotification(dictionary notification)
+### [MobeelizerOperationError](error.html)  sendRemoteNotificationToUsers(dictionary notification, string[] users)
 
-Broadcast the remote notification. Return communication status.
+Send the remote notification to given users. Return operation error or null if success.
 
-### string sendRemoteNotificationToDevice(dictionary notification, string device)
+### [MobeelizerOperationError](error.html)  sendRemoteNotificationToUsersOnDevice(dictionary notification, string[] users, string device)
 
-Broadcast the remote notification to given device. Return communication status.
+Send the remote notification to given users and device. Return operation error or null if success.
 
-### string sendRemoteNotificationToUsers(dictionary notification, string[] users)
+### [MobeelizerOperationError](error.html)  sendRemoteNotificationToGroup(dictionary notification, string group)
 
-Send the remote notification to given users. Return communication status.
+Send the remote notification to given users' group. Return operation error or null if success.
 
-### string sendRemoteNotificationToUsersOnDevice(dictionary notification, string[] users, string device)
+### [MobeelizerOperationError](error.html)  sendRemoteNotificationToGroupOnDevice(dictionary notification, string group, string device)
 
-Send the remote notification to given users and device. Return communication status.
-
-### string sendRemoteNotificationToGroup(dictionary notification, string group)
-
-Send the remote notification to given users' group. Return communication status.
-
-### string sendRemoteNotificationToGroupOnDevice(dictionary notification, string group, string device)
-
-Send the remote notification to given group and device. Return communication status.
+Send the remote notification to given group and device. Return operation error or null if success.
 
 ## Files
 

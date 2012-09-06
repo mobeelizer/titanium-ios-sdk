@@ -22,6 +22,7 @@
 #import "TiMobeelizerSdkDatabaseProxy.h"
 #import "TiMobeelizerSdkFileProxy.h"
 #import "TiMobeelizerSdkCallback.h"
+#import "TiMobeelizerSdkOperationErrorProxy.h"
 #import "TiBase.h"
 #import "TiHost.h"
 #import "TiUtils.h"
@@ -109,34 +110,6 @@
 
 #pragma Public APIs
 
--(id)LOGIN_OK {
-    return LoginOk;
-}
-
--(id)LOGIN_AUTHENTICATION_FAILURE {
-    return LoginAuthenticationFailure;
-}
-
--(id)LOGIN_CONNECTION_FAILURE {
-    return LoginConnectionFailure;
-}
-
--(id)LOGIN_MISSING_CONNECTION_FAILURE {
-    return LoginMissingConnectionFailure;
-}
-
--(id)LOGIN_OTHER_FAILURE {
-    return LoginOtherFailure;
-}
-
--(id)COMMUNICATION_SUCCESS {
-    return CommunicationSuccess;
-}
-
--(id)COMMUNICATION_FAILURE {
-    return CommunicationFailure;
-}
-
 -(id)SYNC_NONE {
     return SyncNone;
 }
@@ -174,17 +147,19 @@
     NSString *password;
     ENSURE_ARG_AT_INDEX(user, args, 0, NSString);
     ENSURE_ARG_AT_INDEX(password, args, 1, NSString);
-    return [TiMobeelizerSdkUtil loginStatusToString:[Mobeelizer loginUser:user andPassword:password]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer loginUser:user andPassword:password]];
 }
 
 -(void)login:(id)args {
     NSString *user;
     NSString *password;
-    KrollCallback *callback;
+    KrollCallback *successCallback;
+    KrollCallback *failureCallback;
     ENSURE_ARG_AT_INDEX(user, args, 0, NSString);
     ENSURE_ARG_AT_INDEX(password, args, 1, NSString);    
-    ENSURE_ARG_AT_INDEX(callback, args, 2, KrollCallback);
-    [Mobeelizer loginUser:user andPassword:password withCallback:[[TiMobeelizerSdkCallback alloc] initWithCallback:callback]];
+    ENSURE_ARG_OR_NIL_AT_INDEX(successCallback, args, 2, KrollCallback);
+    ENSURE_ARG_OR_NIL_AT_INDEX(failureCallback, args, 3, KrollCallback);
+    [Mobeelizer loginUser:user andPassword:password withCallback:[[TiMobeelizerSdkCallback alloc] initWithSuccessCallback:successCallback andFailureCallback:failureCallback]];
 }
 
 -(id)loginToInstanceAndWait:(id)args {
@@ -194,19 +169,21 @@
     ENSURE_ARG_AT_INDEX(instance, args, 0, NSString);
     ENSURE_ARG_AT_INDEX(user, args, 1, NSString);
     ENSURE_ARG_AT_INDEX(password, args, 2, NSString);
-    return [TiMobeelizerSdkUtil loginStatusToString:[Mobeelizer loginToInstance:instance withUser:user andPassword:password]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer loginToInstance:instance withUser:user andPassword:password]];
 }
 
 -(void)loginToInstance:(id)args {
     NSString *instance;
     NSString *user;
     NSString *password;
-    KrollCallback *callback;
+    KrollCallback *successCallback;
+    KrollCallback *failureCallback;
     ENSURE_ARG_AT_INDEX(instance, args, 0, NSString);
     ENSURE_ARG_AT_INDEX(user, args, 1, NSString);
     ENSURE_ARG_AT_INDEX(password, args, 2, NSString);
-    ENSURE_ARG_AT_INDEX(callback, args, 3, KrollCallback);
-    [Mobeelizer loginToInstance:instance withUser:user andPassword:password withCallback:[[TiMobeelizerSdkCallback alloc] initWithCallback:callback]];
+    ENSURE_ARG_OR_NIL_AT_INDEX(successCallback, args, 3, KrollCallback);
+    ENSURE_ARG_OR_NIL_AT_INDEX(failureCallback, args, 4, KrollCallback);
+    [Mobeelizer loginToInstance:instance withUser:user andPassword:password withCallback:[[TiMobeelizerSdkCallback alloc] initWithSuccessCallback:successCallback andFailureCallback:failureCallback]];
 }
 
 -(void)logout:(id)args {
@@ -218,21 +195,27 @@
 }
 
 -(id)syncAndWait:(id)args {
-    return [TiMobeelizerSdkUtil syncStatusToString:[Mobeelizer sync]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer sync]];
 }
 
 -(id)syncAllAndWait:(id)args {
-    return [TiMobeelizerSdkUtil syncStatusToString:[Mobeelizer syncAll]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer syncAll]];
 }
 
 -(void)sync:(id)args {
-    ENSURE_SINGLE_ARG(args, KrollCallback);
-    [Mobeelizer syncWithCallback:[[TiMobeelizerSdkCallback alloc] initWithCallback:args]];
+    KrollCallback *successCallback;
+    KrollCallback *failureCallback;
+    ENSURE_ARG_OR_NIL_AT_INDEX(successCallback, args, 0, KrollCallback);
+    ENSURE_ARG_OR_NIL_AT_INDEX(failureCallback, args, 1, KrollCallback);
+    [Mobeelizer syncWithCallback:[[TiMobeelizerSdkCallback alloc] initWithSuccessCallback:successCallback andFailureCallback:failureCallback]];
 }
 
 -(void)syncAll:(id)args {
-    ENSURE_SINGLE_ARG(args, KrollCallback);
-    [Mobeelizer syncAllWithCallback:[[TiMobeelizerSdkCallback alloc] initWithCallback:args]];
+    KrollCallback *successCallback;
+    KrollCallback *failureCallback;
+    ENSURE_ARG_OR_NIL_AT_INDEX(successCallback, args, 0, KrollCallback);
+    ENSURE_ARG_OR_NIL_AT_INDEX(failureCallback, args, 1, KrollCallback);
+    [Mobeelizer syncAllWithCallback:[[TiMobeelizerSdkCallback alloc] initWithSuccessCallback:successCallback andFailureCallback:failureCallback]];
 }
 
 -(id)checkSyncStatus:(id)args {
@@ -241,21 +224,21 @@
 
 -(void)registerSyncStatusListener:(id)args {
     ENSURE_SINGLE_ARG(args, KrollCallback);
-    [Mobeelizer registerSyncStatusListener:[[TiMobeelizerSdkCallback alloc] initWithCallback:args]];
+    [Mobeelizer registerSyncStatusListener:[[TiMobeelizerSdkCallback alloc] initWithSuccessCallback:args]];
 }
 
 -(id)registerForRemoteNotifications:(id)args {
     ENSURE_SINGLE_ARG(args, NSString);
-    return [TiMobeelizerSdkUtil communicationStatusToString:[Mobeelizer registerForRemoteNotificationsWithDeviceToken:[args dataUsingEncoding:NSUTF8StringEncoding]]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer registerForRemoteNotificationsWithDeviceToken:[args dataUsingEncoding:NSUTF8StringEncoding]]];
 }
 
 -(id)unregisterForRemoteNotifications:(id)args {
-    return [TiMobeelizerSdkUtil communicationStatusToString:[Mobeelizer unregisterForRemoteNotifications]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer unregisterForRemoteNotifications]];
 }
 
 -(id)sendRemoteNotification:(id)args {
     ENSURE_SINGLE_ARG(args, NSDictionary);
-    return [TiMobeelizerSdkUtil communicationStatusToString:[Mobeelizer sendRemoteNotification:args]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer sendRemoteNotification:args]];
 }
 
 -(id)sendRemoteNotificationToDevice:(id)args {
@@ -263,7 +246,7 @@
     NSString *device;
     ENSURE_ARG_AT_INDEX(notification, args, 0, NSDictionary);
     ENSURE_ARG_AT_INDEX(device, args, 1, NSString);
-    return [TiMobeelizerSdkUtil communicationStatusToString:[Mobeelizer sendRemoteNotification:notification toDevice:device]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer sendRemoteNotification:notification toDevice:device]];
 }
 
 -(id)sendRemoteNotificationToUsers:(id)args {
@@ -271,7 +254,7 @@
     NSArray *users;
     ENSURE_ARG_AT_INDEX(notification, args, 0, NSDictionary);
     ENSURE_ARG_AT_INDEX(users, args, 1, NSArray);
-    return [TiMobeelizerSdkUtil communicationStatusToString:[Mobeelizer sendRemoteNotification:notification toUsers:users]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer sendRemoteNotification:notification toUsers:users]];
 }
 
 -(id)sendRemoteNotificationToUsersOnDevice:(id)args {
@@ -281,7 +264,7 @@
     ENSURE_ARG_AT_INDEX(notification, args, 0, NSDictionary);
     ENSURE_ARG_AT_INDEX(users, args, 1, NSArray);
     ENSURE_ARG_AT_INDEX(device, args, 2, NSString);
-    return [TiMobeelizerSdkUtil communicationStatusToString:[Mobeelizer sendRemoteNotification:notification toUsers:users onDevice:device]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer sendRemoteNotification:notification toUsers:users onDevice:device]];
 }
 
 -(id)sendRemoteNotificationToGroup:(id)args {
@@ -289,7 +272,7 @@
     NSString *group;
     ENSURE_ARG_AT_INDEX(notification, args, 0, NSDictionary);
     ENSURE_ARG_AT_INDEX(group, args, 1, NSString);
-    return [TiMobeelizerSdkUtil communicationStatusToString:[Mobeelizer sendRemoteNotification:notification toGroup:group]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer sendRemoteNotification:notification toGroup:group]];
 }
 
 -(id)sendRemoteNotificationToGroupOnDevice:(id)args {
@@ -299,7 +282,7 @@
     ENSURE_ARG_AT_INDEX(notification, args, 0, NSDictionary);
     ENSURE_ARG_AT_INDEX(group, args, 1, NSString);
     ENSURE_ARG_AT_INDEX(device, args, 2, NSString);
-    return [TiMobeelizerSdkUtil communicationStatusToString:[Mobeelizer sendRemoteNotification:notification toGroup:group onDevice:device]];
+    return [[TiMobeelizerSdkOperationErrorProxy alloc] initWithError:[Mobeelizer sendRemoteNotification:notification toGroup:group onDevice:device]];
 }
 
 -(id)createFile:(id)args {

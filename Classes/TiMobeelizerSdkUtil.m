@@ -23,30 +23,6 @@
 
 @implementation TiMobeelizerSdkUtil
 
-+(NSString *)loginStatusToString:(MobeelizerLoginStatus)status {
-    switch (status) {
-        case MobeelizerLoginStatusOk:
-            return LoginOk;            
-        case MobeelizerLoginStatusAuthenticationFailure:
-            return LoginAuthenticationFailure;
-        case MobeelizerLoginStatusConnectionFailure:
-            return LoginConnectionFailure;
-        case MobeelizerLoginStatusMissingConnectionFailure:
-            return LoginMissingConnectionFailure;
-        default:
-            return LoginOtherFailure;
-    }
-}    
-
-+(NSString *)communicationStatusToString:(MobeelizerCommunicationStatus)status {
-    switch (status) {
-        case MobeelizerCommunicationStatusSuccess:
-            return CommunicationSuccess;            
-        default:
-            return CommunicationFailure;
-    }    
-}
-
 +(NSString *)syncStatusToString:(MobeelizerSyncStatus)status {
     switch (status) {
         case MobeelizerSyncStatusFinishedWithSuccess:

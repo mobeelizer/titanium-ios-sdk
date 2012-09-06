@@ -21,12 +21,6 @@
 #import <Foundation/Foundation.h>
 #import <MobeelizerSDK/MobeelizerSDK.h>
 
-#define LoginOk @"OK"
-#define LoginAuthenticationFailure @"AUTHENTICATION_FAILURE"
-#define LoginConnectionFailure @"CONNECTION_FAILURE" 
-#define LoginMissingConnectionFailure @"MISSING_CONNECTION_FAILURE"
-#define LoginOtherFailure @"OTHER_FAILURE"
-
 #define SyncNone @"NONE"
 #define SyncStarted @"STARTER"
 #define SyncFileCreated @"FILE_CREATED" 
@@ -44,9 +38,6 @@
 #define ValidationErrorLessThanOrEqualsTo @"LESS_THAN_OR_EQUALS_TO";
 #define ValidationErrorNotFound @"NOT_FOUND";
 
-#define CommunicationSuccess @"SUCCESS"
-#define CommunicationFailure @"FAILURE"
-
 #define MatchModeAnywhere @"ANYWHERE"
 #define MatchModeEnd @"END"
 #define MatchModeExact @"EXACT"
@@ -54,11 +45,7 @@
 
 @interface TiMobeelizerSdkUtil : NSObject
 
-+(NSString *)loginStatusToString:(MobeelizerLoginStatus)status;
-
 +(NSString *)syncStatusToString:(MobeelizerSyncStatus)status;
-
-+(NSString *)communicationStatusToString:(MobeelizerCommunicationStatus)status;
 
 +(NSString *)errorCodeToString:(MobeelizerErrorCode)code;
 

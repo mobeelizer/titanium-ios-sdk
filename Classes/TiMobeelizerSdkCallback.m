@@ -25,48 +25,60 @@
 #import "TiUtils.h"
 
 @interface TiMobeelizerSdkCallback() {
-    KrollCallback *callback;
+    KrollCallback *successCallback;
+    KrollCallback *failureCallback;
 }
 @end
 
 @implementation TiMobeelizerSdkCallback
 
-- (id)initWithCallback:(KrollCallback *)krollCallback {
+- (id)initWithSuccessCallback:(KrollCallback *)krollSuccessCallback {
     if(self = [super init]) {
-        [krollCallback retain];
-        callback = krollCallback;
+        [krollSuccessCallback retain];
+        successCallback = krollSuccessCallback;
+        failureCallback = nil;
+    }
+    return self;
+}
+
+- (id)initWithSuccessCallback:(KrollCallback *)krollSuccessCallback andFailureCallback:(KrollCallback *)krollFailureCallback {
+    if(self = [super init]) {
+        [krollSuccessCallback retain];
+        [krollFailureCallback retain];        
+        successCallback = krollSuccessCallback;
+        failureCallback = krollFailureCallback;
     }
     return self;
 }
 
 -(void)dealloc {
-    [callback release];
+    [successCallback release];
+    [failureCallback release];
     [super dealloc];
 }
 
-- (void)onLoginFinished:(MobeelizerSyncStatus)status {
-    ENSURE_UI_THREAD(onLoginFinished, status);
-    NSString *string = [TiMobeelizerSdkUtil loginStatusToString:status];    
-    [self callEvent:@"onLoginFinished" withStatus:string];
+- (void)onFailure:(MobeelizerOperationError*)error {
+    ENSURE_UI_THREAD(onFailure, error);
+    KrollContext* context = [failureCallback context];
+    id<TiEvaluator> evaluator = (id<TiEvaluator>)context.delegate;
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:error.code, @"code", error.message, @"message", error.arguments, @"arguments", self, @"source", nil];
+    [evaluator fireEvent:failureCallback withObject:dictionary remove:NO thisObject:nil];
 }
 
--(void)onSyncFinished:(MobeelizerSyncStatus)status {
-    ENSURE_UI_THREAD(onSyncFinished, status);
-    NSString *string = [TiMobeelizerSdkUtil syncStatusToString:status];
-    [self callEvent:@"onSyncFinished" withStatus:string];
+- (void)onSuccess {
+    KrollContext* context = [successCallback context];
+    id<TiEvaluator> evaluator = (id<TiEvaluator>)context.delegate;
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:self, @"source", nil];
+    [evaluator fireEvent:successCallback withObject:dictionary remove:NO thisObject:nil];
 }
 
 -(void)syncStatusHasBeenChangedTo:(MobeelizerSyncStatus)status {
     ENSURE_UI_THREAD(syncStatusHasBeenChangedTo, status);
-    NSString *string = [TiMobeelizerSdkUtil syncStatusToString:status];
-    [self callEvent:@"syncStatusHasBeenChangedTo" withStatus:string];
-}
-
--(void)callEvent:(NSString *)type withStatus:(NSString *)status {
-    KrollContext* context = [callback context];
-    id<TiEvaluator> evaluator = (id<TiEvaluator>)context.delegate;        
-    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:status, @"status", self, @"source", type, @"type", nil];
-    [evaluator fireEvent:callback withObject:dictionary remove:NO thisObject:nil];
+    NSString *string = [TiMobeelizerSdkUtil syncStatusToString:status];    
+    KrollContext* context = [successCallback context];
+    id<TiEvaluator> evaluator = (id<TiEvaluator>)context.delegate;
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:string, @"status", self, @"source", nil];
+    [evaluator fireEvent:successCallback withObject:dictionary remove:NO thisObject:nil];
 }
 
 @end
