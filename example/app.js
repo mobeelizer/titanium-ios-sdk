@@ -78,7 +78,7 @@ if(Error) {
 
 // ------------------------------------
 
-var status = Mobeelizer.checkSyncStatus()
+var status = Mobeelizer.checkSyncStatus();
 
 if(status != Mobeelizer.SYNC_FINISHED_WITH_SUCCESS) {
     throw "##### 8 invalid sync status, should be FINISHED_WITH_SUCCESS => " + status;

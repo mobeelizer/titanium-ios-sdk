@@ -73,6 +73,7 @@
 		24DE9E0F11C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkModuleAssets.h; path = Classes/TiMobeelizerSdkModuleAssets.h; sourceTree = "<group>"; };
 		24DE9E1011C5FE74003F90F6 /* TiMobeelizerSdkModuleAssets.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TiMobeelizerSdkModuleAssets.mm; path = Classes/TiMobeelizerSdkModuleAssets.mm; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C8084E45160088C800A9CA62 /* application.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = application.xml; sourceTree = "<group>"; };
 		C8198AE515F8903D0054D570 /* TiMobeelizerSdkOperationErrorProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMobeelizerSdkOperationErrorProxy.h; path = Classes/TiMobeelizerSdkOperationErrorProxy.h; sourceTree = "<group>"; };
 		C8198AE615F8903D0054D570 /* TiMobeelizerSdkOperationErrorProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMobeelizerSdkOperationErrorProxy.m; path = Classes/TiMobeelizerSdkOperationErrorProxy.m; sourceTree = "<group>"; };
 		C8198AFC15F8AD850054D570 /* error.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = error.md; path = documentation/error.md; sourceTree = "<group>"; };
@@ -109,7 +110,6 @@
 		C8F8B65A156A4A2300D38924 /* module.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = module.xcconfig; sourceTree = "<group>"; };
 		C8F8B65B156A4A2300D38924 /* timodule.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = timodule.xml; sourceTree = "<group>"; };
 		C8F8B661156A4B3B00D38924 /* MobeelizerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MobeelizerSDK.framework; sourceTree = "<group>"; };
-		C8F8B666156A5E5A00D38924 /* application.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = application.xml; path = example/application.xml; sourceTree = "<group>"; };
 		C8F8B667156A5E5A00D38924 /* mobeelizer.properties */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mobeelizer.properties; path = example/mobeelizer.properties; sourceTree = "<group>"; };
 		C8F8B688156E0CAC00D38924 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C8F8B689156E0CAC00D38924 /* manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = manifest; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 		C8F8B65E156A4A2F00D38924 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				C8F8B666156A5E5A00D38924 /* application.xml */,
+				C8084E45160088C800A9CA62 /* application.xml */,
 				C8F8B667156A5E5A00D38924 /* mobeelizer.properties */,
 				C8F8B659156A4A2300D38924 /* app.js */,
 			);
