@@ -493,6 +493,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
+				TITANIUM_BASE_SDK = "$(env.TITANIUM_HOME)";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -534,6 +535,7 @@
 				PRODUCT_NAME = TiMobeelizerSdk;
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
+				TITANIUM_BASE_SDK = "$(env.TITANIUM_HOME)";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
